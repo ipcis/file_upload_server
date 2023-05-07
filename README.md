@@ -1,4 +1,7 @@
-# package main
+Gerne zeige ich Ihnen, wie Sie einen File-Uploader in Go schreiben können, der HTTPS nutzt und das File als Argument annimmt. Hier ist ein Beispielcode, den Sie als Ausgangspunkt verwenden können:
+
+```go
+package main
 
 import (
     "fmt"
@@ -41,3 +44,8 @@ func main() {
         fmt.Println("ListenAndServeTLS: ", err)
     }
 }
+```
+
+Dieser Code verwendet die `http`-Bibliothek von Go, um einen HTTPS-Server zu erstellen, der auf Port 8080 lauscht. Wenn Sie das Programm ausführen, sollten Sie in der Lage sein, auf https://localhost:8080/upload zuzugreifen, um eine Datei hochzuladen.
+
+Beachten Sie, dass Sie für dieses Beispiel auch ein selbst signiertes TLS-Zertifikat benötigen, das von Ihrem Webbrowser akzeptiert wird. In diesem Beispiel wird ein Zertifikat mit den Dateien "server.crt" und "server.key" verwendet. Sie sollten jedoch ein echtes Zertifikat von einer vertrauenswürdigen Zertifizierungsstelle erwerben, wenn Sie planen, den Server im Produktionsbetrieb zu nutzen.
